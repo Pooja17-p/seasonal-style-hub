@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffd6e8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-container {
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 320px;
+    }
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #d63384;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .google-login, .email-login {
+      background-color: #4285F4;
+      color: white;
+      margin-top: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .email-login {
+      background-color: #6c757d;
+    }
+    .submit-btn {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .cancel-btn {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #email-field {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+
+    <!-- Updated form for redirect to checkout.html -->
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="name">Enter Name:</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Enter Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="mobile">Enter Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required />
+      </div>
+
+      <div id="email-field" class="form-group">
+        <label for="email">Enter Email ID:</label>
+        <input type="email" id="email" name="email" />
+      </div>
+
+      <button type="button" class="google-login" onclick="simulateGoogleLogin()">Login with Google</button>
+      <button type="button" class="email-login" onclick="showEmailField()">Login with Email</button>
+
+      <div class="btn-group">
+        <button type="button" class="submit-btn" onclick="goToCheckout()">Submit</button>
+        <button type="reset" class="cancel-btn">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Show email input when Email login is clicked
+    function showEmailField() {
+      document.getElementById("email-field").style.display = "block";
+      document.getElementById("email").required = true; 
+    }
+
+    // Redirect to checkout.html with demo Google email
+    function simulateGoogleLogin() {
+      document.getElementById("email-field").style.display = "block";
+      document.getElementById("email").value = "googleuser@example.com";
+      goToCheckout();
+    }
+
+    // Store info in sessionStorage and redirect
+    function goToCheckout() {
+      const name = document.getElementById("name").value;
+      const gender = document.getElementById("gender").value;
+      const mobile = document.getElementById("mobile").value;
+      const email = document.getElementById("email").value;
+
+      sessionStorage.setItem("name", name);
+      sessionStorage.setItem("gender", gender);
+      sessionStorage.setItem("mobile", mobile);
+      sessionStorage.setItem("email", email);
+
+      // Example cart items
+      const cart = [
+        { name: "Summer Dress", price: 1200, quantity: 1 },
+        { name: "Jeans", price: 1500, quantity: 2 }
+      ];
+      sessionStorage.setItem("cart", JSON.stringify(cart));
+
+      // Redirect to checkout.html
+      window.location.href = "checkout.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="style.css"> <!-- Use your main style.css -->
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #ffe6f0; /* soft pink background like login */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .checkout-container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      width: 400px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 25px;
+      color: #ff6b81; /* matches site accent color */
+      font-size: 1.8rem;
+    }
+
+    form label {
+      display: block;
+      padding: 12px 15px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      background: #f9f9f9;
+      text-align: left;
+      cursor: pointer;
+      font-weight: 500;
+      color: #444;
+      transition: background 0.3s;
+    }
+
+    form label:hover {
+      background: #f1f1f1;
+    }
+
+    input[type="radio"] {
+      margin-right: 12px;
+      accent-color: #ff6b81; /* accent for radios */
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background-color: #ff6b81;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #ff4757;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="checkout-container">
+    <h2>Choose Payment Method</h2>
+    <form id="checkoutForm">
+      <label>
+        <input type="radio" name="payment_method" value="Cash on Delivery" required> Cash on Delivery
+      </label>
+      <label>
+        <input type="radio" name="payment_method" value="Card"> Credit/Debit Card
+      </label>
+      <label>
+        <input type="radio" name="payment_method" value="UPI"> UPI
+      </label>
+      <button type="button" onclick="goToOrderSuccess()">Place Order</button>
+    </form>
+  </div>
+
+  <script>
+    function goToOrderSuccess() {
+      const payment = document.querySelector('input[name="payment_method"]:checked');
+      if(!payment) {
+        alert("Please select a payment method!");
+        return;
+      }
+      const paymentMethod = payment.value;
+
+      const fullname = sessionStorage.getItem("name") || "Guest";
+
+      window.location.href = `../backend/order_success.php?fullname=${encodeURIComponent(fullname)}&payment=${encodeURIComponent(paymentMethod)}`;
+    }
+  </script>
+</body>
+</html>
