@@ -21,7 +21,6 @@ The project is developed using **HTML, CSS, JavaScript, PHP, and MySQL** with **
   - Category
   - Price
 - 🛒 Shopping Cart
-- ❤️ Wishlist Support
 - 👤 User Login
 - 💳 Checkout Page
 - 📱 Responsive Design
@@ -122,37 +121,40 @@ http://localhost/Seasonal-Style-Hub/
 
 ### 🏠 Home Page
 
-"C:\Users\LENEVO\OneDrive\画像\Screenshots\Screenshot 2026-07-02 115924.png"
+<img width="1916" height="907" alt="Screenshot 2026-07-02 115924" src="https://github.com/user-attachments/assets/bc00a062-33b4-4403-813e-28063549b5e5" />
+
 
 ---
 
 ### 🛍️ Shop Page
 
-"C:\Users\LENEVO\OneDrive\画像\Screenshots\Screenshot 2026-07-02 115948.png"
+<img width="1917" height="907" alt="Screenshot 2026-07-02 115948" src="https://github.com/user-attachments/assets/93ab191f-a7d4-4978-a805-efb91653fcd1" />
 
 ---
 
 ### 👕 Product Page
 
-"C:\Users\LENEVO\OneDrive\画像\Screenshots\Screenshot 2026-07-02 120007.png"
+<img width="1915" height="908" alt="Screenshot 2026-07-02 120007" src="https://github.com/user-attachments/assets/3c2d5bbe-e499-4589-8c9d-d144ff9b04c0" />
+
 
 ---
 
 ### 🛒 Shopping Cart
 
-"C:\Users\LENEVO\OneDrive\画像\Screenshots\Screenshot 2026-07-02 120026.png"
+<img width="1918" height="911" alt="Screenshot 2026-07-02 120026" src="https://github.com/user-attachments/assets/0a1245c0-ea62-4d26-bf8e-aa3f3104e5af" />
+
 
 ---
 
 ### 👤 Login Page
 
-"C:\Users\LENEVO\OneDrive\画像\Screenshots\Screenshot 2026-07-02 120048.png"
+<img width="1916" height="911" alt="Screenshot 2026-07-02 120048" src="https://github.com/user-attachments/assets/2a3476b3-d537-4710-9205-992dc5911a87" />
 
----
 
 ### 💳 Checkout Page
 
-"C:\Users\LENEVO\OneDrive\画像\Screenshots\Screenshot 2026-07-02 120105.png"
+<img width="1917" height="911" alt="Screenshot 2026-07-02 120105" src="https://github.com/user-attachments/assets/f069a56a-fe17-4b2b-bcc5-e4608e5f20ba" />
+
 
 ---
 
